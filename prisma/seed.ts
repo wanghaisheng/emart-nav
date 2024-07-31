@@ -58,6 +58,7 @@ async function main() {
         data: {
             email: 'user1@example.com',
             items: {
+                // Use the `create` syntax for nested writes
                 create: [
                     {
                         productId: product1.id,
