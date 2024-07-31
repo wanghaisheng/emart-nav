@@ -7,15 +7,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type cartsItems {
-  productId Int
-  quantity  Int @default(1)
-}
-
 model carts {
   id    String       @id @default(auto()) @map("_id") @db.ObjectId
   email String       @unique
-  items cartsItems[]
+  items cartsItem[]  // Changed to cartsItem (pluralized) for clarity
+}
+
+model cartsItem {     // Changed from type to model
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  cartId    String   @db.ObjectId
+  productId Int
+  quantity  Int      @default(1)
+
+  cart      carts    @relation(fields: [cartId], references: [id])
 }
 
 model products {
