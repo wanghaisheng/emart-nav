@@ -10,10 +10,10 @@ datasource db {
 model carts {
   id    String       @id @default(auto()) @map("_id") @db.ObjectId
   email String       @unique
-  items cartsItem[]  // Changed to cartsItem (pluralized) for clarity
+  items cartsItem[]  // Change to `cartsItem` to match the model name for items
 }
 
-model cartsItem {     // Changed from type to model
+model cartsItem {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   cartId    String   @db.ObjectId
   productId Int
