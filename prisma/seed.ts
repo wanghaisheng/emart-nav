@@ -54,7 +54,7 @@ async function main() {
     });
 
     // Create carts and items
-    const cart1 = await prisma.carts.create({
+    await prisma.carts.create({
         data: {
             email: 'user1@example.com',
             items: {
@@ -72,7 +72,7 @@ async function main() {
         }
     });
 
-    const cart2 = await prisma.carts.create({
+    await prisma.carts.create({
         data: {
             email: 'user2@example.com',
             items: {
