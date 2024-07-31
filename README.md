@@ -70,6 +70,11 @@ To get started with eMart, follow the steps below:
      - STRIPE_SECRET_KEY="YOUR STRIPE_SECRET_KEY"
      - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="YOUR STRIPE_PUBLISHABLE_KEY
      - BASE_URL=http://localhost:3000
+    
+
+DATABASE_URL=mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/formdb_default?authSource=admin&directConnection=true
+
+https://github.com/prisma/prisma/discussions/17833
 
 4. Run the development server: `npm run dev`
 5. Open your browser and navigate to `http://localhost:3000` to access the website.
