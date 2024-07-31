@@ -53,19 +53,18 @@ async function main() {
         }
     });
 
-    // Create some carts with items
+    // Create carts and items
     const cart1 = await prisma.carts.create({
         data: {
             email: 'user1@example.com',
             items: {
-                // Use the `create` syntax for nested writes
                 create: [
                     {
-                        productId: product1.id,
+                        productId: product1.id_,
                         quantity: 2
                     },
                     {
-                        productId: product2.id,
+                        productId: product2.id_,
                         quantity: 1
                     }
                 ]
@@ -79,7 +78,7 @@ async function main() {
             items: {
                 create: [
                     {
-                        productId: product2.id,
+                        productId: product2.id_,
                         quantity: 3
                     }
                 ]
